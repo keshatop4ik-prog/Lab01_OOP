@@ -5,8 +5,10 @@ struct Money {
     int grn;
     short int kop;
 };
-Money add(Money m1, Money m2);
-Money multiply(Money m, int count);
-Money zaokruhlenya(Money m);
-void printMoney(const char* label, Money m);
+
+void mnojenya(Money price, int count, Money &total);
+void dodavanya(Money &total, Money itemSum);
+void zaokruhlenya(Money &m);
+void umova(const char* fileName);
+
 #endif
