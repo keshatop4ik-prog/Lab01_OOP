@@ -34,6 +34,10 @@ void umova(const char* fileName) {
     int g, k, c;
 
     while (fscanf(file, "%d %d %d", &g, &k, &c) != EOF) {
+        if (c <= 0) {
+            printf("Помилка: кількість товару (%d) не може бути 0 або менше!\n", c);
+            continue;
+        }
         Money price = {g, (short int)k};
         Money itemSum;
         mnojenya(price, c, itemSum);
