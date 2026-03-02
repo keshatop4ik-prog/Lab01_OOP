@@ -28,16 +28,21 @@ void zaokruhlenya(Money &m) {
 
 void umova(const char* fileName) {
     FILE* file = fopen(fileName, "r");
-    if (!file) return;
+    if (!file) {
+        printf("Помилка: файл не знайдено!\n");
+        return;
+    }
 
     Money currentTotal = {0, 0};
     int g, k, c;
 
     while (fscanf(file, "%d %d %d", &g, &k, &c) != EOF) {
         if (c <= 0) {
-            printf("Помилка: кількість товару (%d) не може бути 0 або менше!\n", c);
-            continue;
+            printf("Помилка: такої кількості товару (%d) не може бути!\n", c);
+            fclose(file);
+            return;
         }
+
         Money price = {g, (short int)k};
         Money itemSum;
         mnojenya(price, c, itemSum);
