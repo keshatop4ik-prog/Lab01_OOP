@@ -37,9 +37,8 @@ void umova(const char* fileName) {
         }
 
         Money price = {g, k};
-        Money itemSum;
-        mnojenya(price, c, itemSum);
-        dodavanya(currentTotal, itemSum);
+        mnojenya(price, c, price);
+        dodavanya(currentTotal, price);
     }
     fclose(file);
 
