@@ -42,10 +42,9 @@ void umova(const char* fileName) {
     }
     fclose(file);
 
-    Money finalPay = currentTotal;
-    zaokruhlenya(finalPay);
-
     printf("Пампарампампам\n");
     printf("Сума: %d грн %02d коп\n", currentTotal.grn, currentTotal.kop);
-    printf("Заокруглено: %d грн %02d коп\n", finalPay.grn, finalPay.kop);
+
+    zaokruhlenya(currentTotal);
+    printf("Заокруглено: %d грн %02d коп\n", currentTotal.grn, currentTotal.kop);
 }
