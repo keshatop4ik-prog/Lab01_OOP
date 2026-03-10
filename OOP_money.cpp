@@ -26,7 +26,8 @@ void umova(const char* fileName) {
     }
 
     Money currentTotal = {0, 0};
-    int g, k, c;
+    int g, c;
+    short int k;
     char name[50];
 
     while (fscanf(file, "%s %d %d %d", name, &g, &k, &c) == 4) {
@@ -35,7 +36,7 @@ void umova(const char* fileName) {
             continue;
         }
 
-        Money price = {g, (short int)k};
+        Money price = {g, k};
         Money itemSum;
         mnojenya(price, c, itemSum);
         dodavanya(currentTotal, itemSum);
