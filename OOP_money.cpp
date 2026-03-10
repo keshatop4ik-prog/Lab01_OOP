@@ -27,10 +27,11 @@ void umova(const char* fileName) {
 
     Money currentTotal = {0, 0};
     int g, k, c;
+    char name[50];
 
-    while (fscanf(file, "%d %d %d", &g, &k, &c) == 3) {
+    while (fscanf(file, "%s %d %d %d", name, &g, &k, &c) == 4) {
         if (c <= 0) {
-            printf("Помилка: кількість товару (%d) має бути додатною!\n", c);
+            printf("Помилка: товару нема %s (%d) шо ти хочеш!\n", name, c);
             continue;
         }
 
